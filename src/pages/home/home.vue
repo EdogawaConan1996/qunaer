@@ -6,15 +6,27 @@
 s
 <script type="text/javascript">
   import HeaderComponent from '@/components/header/header'
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
+  import {getIndex} from "../../api/data";
+
   export default {
     name: "home",
     components: {
-      HeaderComponent
+      HeaderComponent,
+      swiper,
+      swiperSlide
     },
     data() {
       return {}
     },
-    methods: {}
+    methods: {},
+    created() {
+      getIndex().then(res => {
+        console.log(res);
+      }).catch(err => {
+        console.log(err);
+      })
+    }
   }
 </script>
 
