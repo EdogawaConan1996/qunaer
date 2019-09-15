@@ -1,12 +1,16 @@
 <template>
   <div class="home">
-    hello world
+    <header-component></header-component>
   </div>
 </template>
-
-<script>
+s
+<script type="text/javascript">
+  import HeaderComponent from '@/components/header/header'
   export default {
     name: "home",
+    components: {
+      HeaderComponent
+    },
     data() {
       return {}
     },
@@ -14,7 +18,6 @@
   }
 </script>
 
-<style scoped>
-  .home {
-  }
+<style scoped lang="stylus">
+  
 </style>
