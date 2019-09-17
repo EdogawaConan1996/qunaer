@@ -9,12 +9,12 @@
 </template>
 
 <script type="text/javascript">
-  import HeaderComponent from '@/components/header/header'
-  import SwiperComponent from '@/components/swiper/swiper'
-  import IconsComponent from '@/components/icons/icons'
-  import RecommendComponent from '@/components/recommend/recommend'
-  import {getIndex} from "@/api/data";
-  import WeekendComponent from "../../components/weekend/weekend";
+  import HeaderComponent from '@/pages/home/components/header/header'
+  import SwiperComponent from '@/pages/home/components/swiper/swiper'
+  import IconsComponent from '@/pages/home/components/icons/icons'
+  import RecommendComponent from '@/pages/home/components/recommend/recommend'
+  import WeekendComponent from "@/pages/home/components/weekend/weekend"
+  import {getIndex} from "@/api/data"
 
   export default {
     name: "home",

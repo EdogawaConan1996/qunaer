@@ -7,7 +7,7 @@
       <i class="iconfont iconsousuo"></i>
       输入城市/景点/游玩主题
     </div>
-		<div class="header-right">
+		<div class="header-right" @click="toCityPage">
       城市
       <i class="iconfont iconjiantouarrow486 arrow-icon"></i>
     </div>
@@ -16,7 +16,12 @@
 
 <script>
 	export default {
-		name: 'header-component'
+		name: 'header-component',
+    methods: {
+      toCityPage () {
+        this.$router.push({name: 'city'})
+      }
+    }
 	}
 </script>
 
@@ -30,7 +35,7 @@
     display: flex
     z-index: 10
     background-color: $primary-color
-    line-height: 0.86rem
+    line-height: $header-height
     color: #ffffff
     .header-left
       float: left

@@ -6,3 +6,10 @@ export const getIndex = () => {
     url: '/index'
   })
 }
+
+export const getCity = () => {
+  return axios.request({
+    method: 'GET',
+    url: '/city'
+  })
+}

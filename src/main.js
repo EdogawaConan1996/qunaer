@@ -6,6 +6,7 @@ import router from './router'
 
 import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueBus from 'vue-bus'
 
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
@@ -16,6 +17,7 @@ Vue.config.productionTip = false
 
 fastclick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
+Vue.use(VueBus)
 
 /* eslint-disable no-new */
 new Vue({
