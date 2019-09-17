@@ -23,8 +23,13 @@
 <style scoped lang="stylus">
   @import "~@/assets/styles/varibles.styl"
   .header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
     display: flex
-    background-color: $bg-color
+    z-index: 10
+    background-color: $primary-color
     line-height: 0.86rem
     color: #ffffff
     .header-left

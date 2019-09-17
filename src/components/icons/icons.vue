@@ -30,6 +30,7 @@ export default {
     width: 100%
     height: 0
     padding-bottom: 50%
+    margin-top: 0.2rem
     .icon
       position: relative
       overflow: hidden
