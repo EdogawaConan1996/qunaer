@@ -29,7 +29,7 @@
     },
     data() {
       return {
-        weekendList: []
+
       }
     },
     methods: {}
@@ -69,4 +69,12 @@
         border-radius: 0.06rem
         line-height: 0.44rem
         color: #ffffff
+    .all-weekend-button
+      width: 100%
+      height: 0.8rem
+      line-height: 0.8rem
+      background-color: #ffffff
+      font-size: 0.3rem
+      color: $primary-color
+      text-align: center
 </style>
