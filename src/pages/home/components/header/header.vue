@@ -8,15 +8,25 @@
       输入城市/景点/游玩主题
     </div>
 		<div class="header-right" @click="toCityPage">
-      城市
+      {{city.name ? city.name : '城市'}}
       <i class="iconfont iconjiantouarrow486 arrow-icon"></i>
     </div>
 	</div>
 </template>
 
 <script>
-	export default {
+	import {mapGetters} from "vuex";
+
+  export default {
 		name: 'header-component',
+    computed: {
+		  ...mapGetters({
+        'getCity': 'city/getCity'
+      }),
+      city () {
+		    return this.getCity
+      }
+    },
     methods: {
       toCityPage () {
         this.$router.push({name: 'city'})

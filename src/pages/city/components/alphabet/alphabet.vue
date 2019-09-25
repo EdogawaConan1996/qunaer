@@ -14,16 +14,9 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
   export default {
     name: "alphabet-component",
-    props: {
-      cityList: {
-        type: Object,
-        default () {
-          return {}
-        }
-      }
-    },
     data() {
       return {
         touchStatus: false,
@@ -31,6 +24,12 @@
       }
     },
     computed: {
+      ...mapGetters({
+        'getCityList': 'city/getCityList'
+      }),
+      cityList () {
+        return this.getCityList
+      },
       alphabetList () {
         const list = []
         for (const key in this.cityList) {

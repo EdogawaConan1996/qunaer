@@ -12,16 +12,16 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item in cityList.hotCities" :key="item.id">
+          <div class="button-wrapper" v-for="item in hotCities" :key="item.id" @click="handleClickCity(item)">
             <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
       <div class="area">
-        <template v-for="(list, key) in cityList.cities">
+        <template v-for="(list, key) in cityList">
           <div class="title border-topbottom" :ref="key">{{key}}</div>
           <ul class="item-list">
-            <li class="item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+            <li class="item border-bottom" v-for="item in list" :key="item.id" @click="handleClickCity(item)">{{item.name}}</li>
           </ul>
         </template>
       </div>
@@ -31,25 +31,35 @@
 
 <script>
   import BScroll from 'better-scroll'
+  import {mapGetters, mapMutations} from "vuex";
   export default {
     name: "city-list-component",
-    props: {
-      cityList: {
-        type: Object,
-        default () {
-          return {
-            hotCities: [],
-            cities: []
-          }
-        }
-      }
-    },
     data() {
       return {
         areaScroll: null
       }
     },
-    methods: {},
+    computed: {
+      ...mapGetters({
+        'getCityList': 'city/getCityList',
+        'getHotCities': 'city/getHotCities'
+      }),
+      cityList () {
+        return this.getCityList
+      },
+      hotCities () {
+        return this.getHotCities
+      }
+    },
+    methods: {
+      ...mapMutations({
+        'setCity': 'city/setCity'
+      }),
+      handleClickCity(item) {
+        this.setCity(item)
+        this.$router.back()
+      }
+    },
     watch: {
       cityList () {
         this.$nextTick(() => {
