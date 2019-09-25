@@ -13,3 +13,10 @@ export const getCity = () => {
     url: '/city'
   })
 }
+
+export const getDetail = () => {
+  return axios.request({
+    method: 'GET',
+    url: '/detail'
+  })
+}
