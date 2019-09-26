@@ -1,25 +1,40 @@
 <template>
-    <div class="banner">
-      <img class="banner-img" :src="detail.bannerImg" alt="no pic" />
-      <div class="banner-info">
-        <div class="banner-title">{{detail.sightName}}</div>
-        <div class="banner-number">
-          <i class="iconfont icontupian banner-icon"></i>
-          39
+    <div>
+      <div class="banner">
+        <img class="banner-img" :src="detail.bannerImg" alt="no pic" @click="showGalleries"/>
+        <div class="banner-info">
+          <div class="banner-title">{{detail.sightName}}</div>
+          <div class="banner-number">
+            <i class="iconfont icontupian banner-icon"></i>
+            39
+          </div>
         </div>
       </div>
+      <gallery :img-list="detail.gallaryImgs" v-show="showGallery" @close="showGallery = false"/>
     </div>
 </template>
 
 <script>
+  import Gallery from "../../../components/gallery";
   export default {
     name: "banner",
+    components: {Gallery},
     props: {
       detail: {
         type: Object,
         default () {
           return {}
         }
+      }
+    },
+    data () {
+      return {
+        showGallery: false
+      }
+    },
+    methods: {
+      showGalleries () {
+        this.showGallery = true
       }
     }
   }
