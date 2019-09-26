@@ -10,15 +10,18 @@
           </div>
         </div>
       </div>
-      <gallery :img-list="detail.gallaryImgs" v-show="showGallery" @close="showGallery = false"/>
+      <fade-animation>
+        <gallery :img-list="detail.gallaryImgs" v-show="showGallery" @close="showGallery = false"/>
+      </fade-animation>
     </div>
 </template>
 
 <script>
   import Gallery from "../../../components/gallery";
+  import FadeAnimation from "../../../components/fade-animation";
   export default {
     name: "banner",
-    components: {Gallery},
+    components: {FadeAnimation, Gallery},
     props: {
       detail: {
         type: Object,

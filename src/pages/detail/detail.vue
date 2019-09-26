@@ -2,7 +2,9 @@
   <div class="detail">
     <header-component :title="detail.sightName"/>
     <banner v-if="detail" :detail="detail"/>
-    <div class="content"></div>
+    <div class="content">
+      <list :list-content="detail.categoryList"/>
+    </div>
   </div>
 </template>
 
@@ -10,10 +12,11 @@
   import {getDetail} from "../../api/data";
   import Banner from "./components/banner";
   import HeaderComponent from "./components/header";
+  import List from "./components/list";
 
   export default {
     name: "detail",
-    components: {HeaderComponent, Banner},
+    components: {List, HeaderComponent, Banner},
     data () {
       return {
         detail: {}

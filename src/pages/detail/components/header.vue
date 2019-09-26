@@ -47,11 +47,11 @@
         }
       }
     },
-    created() {
+    activated() {
       window.addEventListener('scroll', this.handleScroll)
     },
-    destroyed() {
-      // window.removeEventListener('scroll', this.handleScroll)
+    deactivated() {
+      window.removeEventListener('scroll', this.handleScroll)
     }
   }
 </script>
